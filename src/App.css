@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* path {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+} */
+
+.container {
+  /* padding: 15px;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 800px;
+  overflow: auto; */
+}
+
+.states {
+  fill: #bbb;
+}
+
+.states :hover {
+  fill: orange;
+}
+
+.districts {
+  fill: #bbb;
+}
+
+.districts :hover {
+  fill: orangered;
+}
+
+.district-boundaries {
+  pointer-events: none;
+  fill: none;
+  stroke: white;
+  stroke-width: 0.5px;
+}
+
+.state-boundaries {
+  pointer-events: none;
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5px;
+}
+/* .axis path,
+.axis line {
+  stroke: #E0E0E0;
+}
+
+.axis text {
+  font-size: 12px;
+  fill: black;
+}
+
+.axis-bottom text {
+  transform: rotate(-45deg);
+  text-anchor: end;
+} */
+
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
