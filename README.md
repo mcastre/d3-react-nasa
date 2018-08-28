@@ -1,8 +1,8 @@
 # D3 and React - NASA EVA 
 
-D3-driven React app showing NASA EVA (Extra-vehicular Activity) historical data
+D3-driven React app showing NASA historical data
 
-Dataset is public and can be found [here](https://data.nasa.gov/Raw-Data/Extra-vehicular-Activity-EVA-US-and-Russia/9kcy-zwvn).
+Datasets are public and can be found [here](https://data.nasa.gov/browse?limitTo=datasets).
 
 ### Start up
 This app uses create-react-app as a base. To view the app locally, follow these steps:
