@@ -17,11 +17,11 @@ export class Points extends Component {
         <circle
           key={i}
           className='dot'
-          r={3}
+          r={4}
           cx={x(new Date(d.date_time_peak_brightness_ut))}
           cy={y(d.calculated_total_impact_energy_kt)}
-          onMouseOver={handleShowToolTip} 
-          onMouseOut={handleHideToolTip}
+          onMouseEnter={handleShowToolTip} 
+          onMouseLeave={handleHideToolTip}
           data-key={formatDateKey(new Date(d.date_time_peak_brightness_ut))} 
           data-value={d.calculated_total_impact_energy_kt}>
         </circle>

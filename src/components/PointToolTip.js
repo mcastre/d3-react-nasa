@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { PointToolTipText } from './PointTooltipText';
+
 export class PointToolTip extends Component {
   render() {
     const { display, pos, data} = this.props.tooltip;
@@ -19,7 +21,7 @@ export class PointToolTip extends Component {
       visibility = 'visible';
 
       if (y > height) { // Position tooltip above the Point if theres space up top
-        transform = 'translate(' + ( x - width / 2) + ',' + ( y - height - 20) + ')';
+        transform = 'translate(' + ( x - width / 2 ) + ',' + ( y - height - 20) + ')';
         transformArrow = 'translate(' + ( width / 2 - 20 ) + ',' + ( height - 2 ) + ')';
       } else if (y < height) { // Position tooltip below the Point if no space available above
         transform = 'translate(' + ( x - width / 2 ) + ',' + ( Math.round(y) + 20 ) + ')';
@@ -40,34 +42,22 @@ export class PointToolTip extends Component {
           rx={5} 
           ry={5} 
           visibility={visibility} 
-          fill='#000' />
+          fill='#000'
+          opacity={0.75} />
         <polygon
           is='true'
           className='shadow'
           points='10,0 30,0 20,10'
           transform={transformArrow}
           fill='#000'
+          opacity={0.75}
           visibility={visibility} />
-        <text
-          is='true'
-          transform={transformText}
-          visibility={visibility}>
-          <tspan
-            is='true'
-            x='0'
-            textAnchor='middle'
-            style={{'font-size': 12}}
-            fill='#fff'>{data.key}
-          </tspan>
-          <tspan
-            is='true'
-            x='0'
-            textAnchor='middle'
-            dy='25'
-            style={{'font-size': 12}}
-            fill='#a9f3ff'>{data.value}
-          </tspan>
-        </text>
+        <PointToolTipText
+          width={width}
+          height={height}
+          transformText={transformText}
+          visibility={visibility}
+          data={data} />
       </g>
     );
   }

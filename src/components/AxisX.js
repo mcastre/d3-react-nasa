@@ -17,11 +17,14 @@ export class AxisX extends Component {
     const { data, margin, width } = this.props;
     const chartWidth = width - margin.left - margin.right;
 
+    const xExtent = extent(data.map(d => new Date(d.date_time_peak_brightness_ut))),
+          xRange = xExtent[1] - xExtent[0];
+
     const x = scaleTime()
       .range([0, chartWidth])
-      .domain(extent(data.map(d => new Date(d.date_time_peak_brightness_ut))));
+      .domain([xExtent[0] - (xRange * .05), xExtent[1] - (xRange * .005)]);
     
-    const xAxis = d3Axis.axisBottom(x).ticks(5);
+    const xAxis = d3Axis.axisBottom(x).ticks(5).tickSizeOuter(0);
 
     d3Select('.x').call(xAxis);
 

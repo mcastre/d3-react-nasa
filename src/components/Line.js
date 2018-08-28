@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { scaleTime, scaleLinear } from 'd3-scale';
-import { extent } from 'd3-array';
+import { extent, max } from 'd3-array';
 import { line } from 'd3-shape';
 
 import { Points } from './Points';
@@ -21,7 +21,7 @@ export class Line extends Component {
   }
 
   showToolTip = (e) => {
-    e.target.setAttribute('fill', '#000');
+    e.target.setAttribute('fill', '#8836E3');
 
     this.setState({
       tooltip: {
@@ -38,8 +38,9 @@ export class Line extends Component {
     })
   }
 
+  // onMouseLeave not working for some reason
   hideTooltip = (e) => {
-    e.target.setAttribute('fill', '#000');
+    e.target.setAttribute('fill', '#9F4BFD');
     this.setState({
       tooltip: {
         display: false,
@@ -59,9 +60,12 @@ export class Line extends Component {
     const chartLine = line()
       .x(d => x(new Date(d.date_time_peak_brightness_ut)))
       .y(d => y(d.calculated_total_impact_energy_kt));
+    
+    const xExtent = extent(data.map(d => new Date(d.date_time_peak_brightness_ut))),
+          xRange = xExtent[1] - xExtent[0];      
 
-    const xDomain = extent(data.map(d => new Date(d.date_time_peak_brightness_ut)));
-    const yDomain = extent(data.map(d => d.calculated_total_impact_energy_kt));
+    const xDomain = [xExtent[0] - (xRange * .05), xExtent[1] - (xRange * .005)];
+    const yDomain = [0, max(data, (d) => d.calculated_total_impact_energy_kt)];
     
     x.domain(xDomain);
     y.domain(yDomain);

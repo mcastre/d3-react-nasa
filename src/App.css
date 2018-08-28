@@ -30,10 +30,34 @@ body {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: none;
   shape-rendering: crispEdges; }
 
 .line {
   fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px; }
+  stroke: #9F4BFD;
+  stroke-width: 2.5px; }
+
+text {
+  font-family: "Noto Sans", sans-serif; }
+
+.dot {
+  cursor: pointer;
+  fill: #9F4BFD;
+  transition: fill 200ms linear; }
+  .dot:hover, .dot:focus {
+    fill: #8419fc; }
+
+.y-grid .tick {
+  stroke: #9F4BFD;
+  opacity: 1; }
+
+.tick line {
+  fill: #6A6A6A;
+  stroke-width: 0.15; }
+
+.tick text {
+  fill: #6A6A6A; }
+
+.y-grid path.domain {
+  stroke: none !important; }

@@ -32,12 +32,44 @@ body {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: none;
   shape-rendering: crispEdges;
 }
 
 .line {
   fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke: $app-purple;
+  stroke-width: 2.5px;
+}
+
+text {
+  font-family: $app-font-family;
+}
+
+.dot {
+  cursor: pointer;
+  fill: $app-purple;
+  transition: fill 200ms linear;
+  &:hover, &:focus {
+    fill: darken($app-purple, 10%);
+  }
+}
+
+
+.y-grid .tick {
+  stroke: $app-purple;
+  opacity: 1;
+}
+
+.tick line {
+  fill: #6A6A6A;
+  stroke-width: 0.15;
+}
+
+.tick text {
+ fill: #6A6A6A;
+}
+
+.y-grid path.domain {
+  stroke: none !important;
 }

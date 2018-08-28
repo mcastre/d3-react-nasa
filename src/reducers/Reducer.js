@@ -6,6 +6,9 @@ export const dataReducer = (state = [], action) => {
       //   ...state,
       //   ...action.data
       // ];
+    case 'SET_CHART_LIMIT': 
+      return state;
+
     default:
       return state;
   }
