@@ -1,4 +1,4 @@
-# D3 and React - NASA EVA 
+# D3 and React - NASA 
 
 D3-driven React app showing NASA historical data
 
