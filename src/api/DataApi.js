@@ -12,6 +12,7 @@ export const getData = (filter) => {
         consumer.query()
           .withDataset('2af2-m89m')
           .order('date_time_peak_brightness_ut')
+          .limit(10)
           .getRows()
             .on('success', (data) => {
               resolve(data);

@@ -22,6 +22,7 @@ export class Line extends Component {
 
   showToolTip = (e) => {
     e.target.setAttribute('fill', '#000');
+
     this.setState({
       tooltip: {
         display: true,

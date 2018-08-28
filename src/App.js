@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LineChart } from './components/LineChart';
+import { ResponsiveWrapper } from './ResponsiveWrapper';
 import { connect } from 'react-redux';
 // import { getEvaData } from './actions/Actions';
 import { getData } from './api/DataApi';
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className='container'>
         <h1 className='card-header'>Fireball &amp; Bolide Reports (2009 - 2015)</h1>
-        <LineChart data={apiData} />
+        <ResponsiveWrapper data={apiData} />
       </div>
     );
   }

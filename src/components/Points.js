@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import { getMonthNames } from '../helpers/getMonthNames';
 
 export class Points extends Component {
   render() {
     const { data, x, y, handleShowToolTip, handleHideToolTip } = this.props;
+    const formatDateKey = (date) => {
+      let year = date.getFullYear(),
+          month = getMonthNames(date.getMonth()),
+          day = date.getDay();
+  
+      return `${month} ${day}, ${year}`;
+    };
 
     const dots = data.map((d, i) => {
       return (
@@ -14,7 +22,7 @@ export class Points extends Component {
           cy={y(d.calculated_total_impact_energy_kt)}
           onMouseOver={handleShowToolTip} 
           onMouseOut={handleHideToolTip}
-          data-key={new Date(d.date_time_peak_brightness_ut)} 
+          data-key={formatDateKey(new Date(d.date_time_peak_brightness_ut))} 
           data-value={d.calculated_total_impact_energy_kt}>
         </circle>
       )
