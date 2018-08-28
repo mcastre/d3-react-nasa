@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       apiData: null,
-      chartLimit: 50
+      chartLimit: 10
     };
     this.handleSetChartLimit = this.handleSetChartLimit.bind(this);
     this.handleChange = this.handleChange.bind(this);

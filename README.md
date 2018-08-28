@@ -11,3 +11,6 @@ This app uses create-react-app as a base. To view the app locally, follow these 
 2. `npm install` to install dependencies
 3. `npm start` to run the app
 4. Visit `http://localhost:3000` in your browser
+
+### Netlify Live Site
+You can visit a live version of this site [here](https://loving-swartz-12bd3b.netlify.com/). Feedback is always appreciated!
