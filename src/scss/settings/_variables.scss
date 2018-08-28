@@ -1,0 +1,27 @@
+// Colors 
+// ======================================
+
+$app-background: #f2f2f2;
+$app-grey: #333;
+
+
+// Typography 
+// ======================================
+
+$app-font-family: 'Noto Sans', sans-serif;
+$app-small-font-size: 0.75rem;
+$app-regular-font-size: 1rem;
+$app-large-font-size: 1.5rem;
+$app-xlarge-font-size: 2.25rem;
+$app-regular-font-weight: 400;
+$app-bold-font-weight: 700;
+
+// Util Mixins 
+// ======================================
+
+@mixin card-style {
+  padding: 1rem;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(black, 0.2);
+}

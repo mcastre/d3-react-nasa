@@ -1,42 +1,43 @@
 import React, { Component } from 'react';
-// import { geoPath } from "d3-geo"
-// import { feature, mesh } from "topojson-client"
-import CongressionalDistricts from './CongressionalDistricts';
-import LineChart from './LineChart';
-import BasicLineChart from './BasicLineChart';
-import * as soda from 'soda-js';
-import './App.css';
+import { LineChart } from './components/LineChart';
+import { connect } from 'react-redux';
+// import { getEvaData } from './actions/Actions';
+import { getData } from './api/DataApi';
+
+import './app.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      evaData: null
+      apiData: null
     };
   }
 
   componentWillMount() {
-    const consumer = new soda.Consumer('data.nasa.gov');
-    consumer.query()
-      .withDataset('q8u9-7uq7')
-      .getRows()
-        .on('success', (data) => {
-          console.log('evaData', data)
-          this.setState({evaData: data})})
-        .on('error', (err) => console.log('error: ', err));
+    // Get data from API
+    getData('ALL').then(data => {
+      console.log('data from api > ', data);
+      this.setState({apiData: data});
+    });
   }
 
   render() {
-    const { evaData } = this.state;
-    if (!evaData) {
+    const { apiData } = this.state;
+    if (!apiData) {
       return <p>Loading...</p>
     }
     return (
       <div className='container'>
-        <BasicLineChart evaData={evaData} />
+        <h1 className='card-header'>Fireball &amp; Bolide Reports (2009 - 2015)</h1>
+        <LineChart data={apiData} />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(
+  (state) => {
+    return state;
+  }
+)(App);
