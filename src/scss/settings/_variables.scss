@@ -2,8 +2,12 @@
 // ======================================
 
 $app-background: #f2f2f2;
+$app-light-grey: #6a6a6a;
 $app-grey: #333;
 $app-purple: #9F4BFD;
+
+$app-shade-05: rgba(black, 0.05);
+$app-shade-10: rgba(black, 0.1);
 
 
 // Typography 
@@ -25,4 +29,14 @@ $app-bold-font-weight: 700;
   background: white;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(black, 0.2);
+}
+
+@mixin container-scale {
+  max-width: 300px;
+  @media screen and (min-width: 700px) and (max-width: 860px) {
+    max-width: 500px;
+  }
+  @media screen and (min-width: 861px) {
+    max-width: 750px;
+  }
 }

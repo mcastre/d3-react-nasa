@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { LineChart } from './components/LineChart'
 
-export class ResponsiveWrapper extends PureComponent {
+export class Chart extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,6 +33,7 @@ export class ResponsiveWrapper extends PureComponent {
 
   renderChartComponent() {
     const { containerWidth } = this.state;
+
     return (
       <LineChart {...this.props} parentWidth={containerWidth}></LineChart>
     );

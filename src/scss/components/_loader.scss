@@ -1,0 +1,69 @@
+.skeleton-container {
+  width: 100%;
+  min-height: 389px; // magic number to match height of chart container
+}
+
+.loader {
+  width: 120px;
+  animation: fadeIn 1s linear;
+  margin: 0 auto;
+  padding-top: 25%;
+  text-align: center;
+  @media screen and (min-width: 860px) {
+    padding-top: 18%;
+  }
+}
+
+.loader-text {
+  font-size: $app-regular-font-size;
+  color: $app-light-grey;
+}
+
+.spinner {
+  x: 0;
+  y: 0;
+  width: 90px;
+  animation: spin 2s linear infinite;
+}
+
+.spinner-inner {
+  stroke: {
+    dashoffset: 0;
+    dasharray: 300;
+    width: 2;
+    miterlimit: 10;
+    linecap: round;
+  }
+  animation: spin-circle 2s linear infinite;
+  stroke: $app-purple;
+  fill: transparent;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-circle {
+  0% {
+    stroke-dashoffset: 0
+  }
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

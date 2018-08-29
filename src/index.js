@@ -15,17 +15,6 @@ import Store from './store/Store';
 // NASA Facilities
 // https://data.nasa.gov/resource/9g7e-7hzz.json
 
-// Store.subscribe(() => {
-//   const state = Store.getState();
-//   console.log('Store > current state', state)
-// })
-
-// const initialData = getData();
-// Store.dispatch(getEvaData(initialData));
-// const data = getData('ALL').then(response => {
-//   console.log('api > ', response);
-// });
-
 ReactDOM.render(
   <Provider store={Store}>
     <App />

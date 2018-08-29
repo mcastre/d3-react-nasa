@@ -20,6 +20,141 @@ body {
     .container {
       max-width: 750px; } }
 
+.skeleton-container {
+  width: 100%;
+  min-height: 389px; }
+
+.loader {
+  width: 120px;
+  animation: fadeIn 1s linear;
+  margin: 0 auto;
+  padding-top: 25%;
+  text-align: center; }
+  @media screen and (min-width: 860px) {
+    .loader {
+      padding-top: 18%; } }
+
+.loader-text {
+  font-size: 1rem;
+  color: #6a6a6a; }
+
+.spinner {
+  x: 0;
+  y: 0;
+  width: 90px;
+  animation: spin 2s linear infinite; }
+
+.spinner-inner {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  animation: spin-circle 2s linear infinite;
+  stroke: #9F4BFD;
+  fill: transparent; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes spin-circle {
+  0% {
+    stroke-dashoffset: 0; }
+  100% {
+    stroke-dashoffset: -600; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.app-link {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  text-decoration: none; }
+  .app-link:hover, .app-link:focus {
+    color: #9F4BFD; }
+
+.app-button {
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  height: auto;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: left;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  color: inherit;
+  background-color: transparent;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear; }
+  @media screen and (min-width: 768px) {
+    .app-button {
+      padding: 0.75rem 1.5rem; } }
+  .app-button:focus, .app-button:hover {
+    text-decoration: none;
+    color: inherit;
+    background-color: #9F4BFD;
+    border-color: transparent; }
+
+.app-button-outline {
+  color: #6a6a6a;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .app-button-outline:hover, .app-button-outline:focus {
+    color: white;
+    background-color: #9F4BFD;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.app-button-group > .app-button:not(:first-child):not(:last-child):not(.app-dropdown-toggle), .app-button-group > .app-button-group:not(:first-child):not(:last-child) > .app-button {
+  border-radius: 0; }
+
+.app-button-group > .app-button:last-child:not(:first-child),
+.app-button-group > .app-dropdown-toggle:not(:first-child), .app-button-group > .app-button-group:last-child:not(:first-child) > .app-button:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.app-button-group > .app-button:first-child:not(:last-child):not(.app-dropdown-toggle), .app-button-group > .app-button-group:first-child:not(:last-child) > .app-button:last-child,
+.app-button-group > .app-button-group:first-child:not(:last-child) > .app-dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.app-button-group, .app-button-group > .app-button {
+  position: relative; }
+
+.app-button-group {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-top: 2rem; }
+  .app-button-group > .app-button {
+    flex: 0 1 auto; }
+    .app-button-group > .app-button:hover, .app-button-group > .app-button:focus, .app-button-group > .app-button:active, .app-button-group > .app-button.active {
+      z-index: 2; }
+  .app-button-group .app-button + .app-button,
+  .app-button-group .app-button + .app-button-group,
+  .app-button-group .app-button-group + .app-button,
+  .app-button-group .app-button-group + .app-button-group {
+    margin-left: -1px; }
+
+.app-button-group > .app-button:first-child {
+  margin-left: 0; }
+
+.app-button-group > .app-button-group {
+  float: left; }
+
 .card-header {
   font-weight: 400;
   font-size: 1.5rem;
@@ -44,8 +179,12 @@ text {
 .dot {
   cursor: pointer;
   fill: #9F4BFD;
-  transition: fill 200ms linear; }
+  stroke: none;
+  transition: all 200ms linear; }
   .dot:hover, .dot:focus {
+    stroke: #9F4BFD;
+    stroke-width: 5px;
+    stroke-opacity: 0.6;
     fill: #8419fc; }
 
 .y-grid .tick {
@@ -61,3 +200,15 @@ text {
 
 .y-grid path.domain {
   stroke: none !important; }
+
+.footer-text {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: rgba(0, 0, 0, 0.1); }
+  @media screen and (min-width: 700px) and (max-width: 860px) {
+    .footer-text {
+      max-width: 500px; } }
+  @media screen and (min-width: 861px) {
+    .footer-text {
+      max-width: 750px; } }

@@ -1,16 +1,11 @@
-export const getEvaData = (data, filter) => {
-  console.log('Actions > getEvaData', data)
-  return {
-    type: 'GET_DATA',
-    data,
-    filter
-  };
-};
+import { getApiData } from '../api/DataApi';
 
-export const setChartLimit = (val) => {
-  console.log('Actions > setChartLimit', val)
-  return {
-    type: 'SET_CHART_LIMIT',
-    val
-  };
-};
+const setData = (args) => ({
+  type: 'SET_DATA',
+  args
+});
+
+export const fetchData = (args) => 
+  getApiData(args).then(res => {
+    return setData(res);
+  });

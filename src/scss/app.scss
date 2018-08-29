@@ -1,75 +1,10 @@
 @import 'settings/variables';
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $app-font-family;
-  background: $app-background;
-}
-
-.container {
-  @include card-style;
-  max-width: 300px;
-  @media screen and (min-width: 700px) and (max-width: 860px) {
-    max-width: 500px;
-  }
-  @media screen and (min-width: 861px) {
-    max-width: 750px;
-  }
-  margin: 0 auto;
-  margin-top: 30px;
-  overflow: auto;
-}
-
-.card-header {
-  font-weight: $app-regular-font-weight;
-  font-size: $app-large-font-size;
-  color: $app-grey;
-  margin-left: 10px;
-  margin-top: 0;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: none;
-  shape-rendering: crispEdges;
-}
-
-.line {
-  fill: none;
-  stroke: $app-purple;
-  stroke-width: 2.5px;
-}
-
-text {
-  font-family: $app-font-family;
-}
-
-.dot {
-  cursor: pointer;
-  fill: $app-purple;
-  transition: fill 200ms linear;
-  &:hover, &:focus {
-    fill: darken($app-purple, 10%);
-  }
-}
-
-
-.y-grid .tick {
-  stroke: $app-purple;
-  opacity: 1;
-}
-
-.tick line {
-  fill: #6A6A6A;
-  stroke-width: 0.15;
-}
-
-.tick text {
- fill: #6A6A6A;
-}
-
-.y-grid path.domain {
-  stroke: none !important;
-}
+@import
+  'components/page',
+  'components/loader',
+  'components/buttons',
+  'components/button-groups',
+  'components/cards',
+  'components/graph',
+  'components/footer';

@@ -1,15 +1,11 @@
 export const dataReducer = (state = [], action) => {
-  switch(action.type) {
-    case 'GET_DATA':
-      return state;
-      // return [
-      //   ...state,
-      //   ...action.data
-      // ];
-    case 'SET_CHART_LIMIT': 
+  const { type, args } = action;
+
+  switch(type) {
+    case 'SET_DATA': 
+      state.currentData = [...args];
       return state;
 
-    default:
-      return state;
+    default: return state;
   }
 }

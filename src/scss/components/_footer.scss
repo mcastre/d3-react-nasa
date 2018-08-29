@@ -1,0 +1,6 @@
+.footer-text {
+  @include container-scale;
+  margin: 0 auto;
+  margin-top: 2rem; 
+  color: $app-shade-10;
+}
