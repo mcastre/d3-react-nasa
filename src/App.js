@@ -48,7 +48,7 @@ class App extends Component {
 
   render() {
     const { isLoading, data } = this.state;
-
+    // Set max year in card header
     const getMaxYear = () => {
       if (data) {
         return max(data, (d) => new Date(d.date_time_peak_brightness_ut)).getFullYear();

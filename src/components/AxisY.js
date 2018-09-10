@@ -26,7 +26,7 @@ export class AxisY extends Component {
     const yAxis = d3Axis.axisLeft(y);
 
     d3Select('.y').call(yAxis)
-      .append('text') // append Y axis label
+      .append('text') // append Y axis '(kt)' label
       .attr('fill', '#6a6a6a')
       .attr('transform', 'rotate(-90)')
       .attr('y', -10)

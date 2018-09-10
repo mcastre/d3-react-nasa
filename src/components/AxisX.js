@@ -22,7 +22,7 @@ export class AxisX extends Component {
 
     const x = scaleTime()
       .range([0, chartWidth])
-      .domain([xExtent[0] - (xRange * .05), xExtent[1] - (xRange * .005)]);
+      .domain([xExtent[0] - (xRange * .05), xExtent[1] - (xRange * .005)]); // Add some padding on first and last axis values
     
     const xAxis = d3Axis.axisBottom(x).ticks(5).tickSizeOuter(0);
 

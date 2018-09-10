@@ -17,8 +17,6 @@
   position: relative;
 }
 
-// copied from Bootstrap v4 and modified
-
 // Make the div behave like a button
 .app-button-group {
   @extend %make-relative;

@@ -35,12 +35,12 @@ text {
 }
 
 .tick line {
-  fill: #6A6A6A;
+  fill: $app-light-grey;
   stroke-width: 0.15;
 }
 
 .tick text {
- fill: #6A6A6A;
+ fill: $app-light-grey;
 }
 
 .y-grid path.domain {

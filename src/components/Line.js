@@ -62,7 +62,7 @@ export class Line extends Component {
       .y(d => y(d.calculated_total_impact_energy_kt));
     
     const xExtent = extent(data.map(d => new Date(d.date_time_peak_brightness_ut))),
-          xRange = xExtent[1] - xExtent[0];      
+          xRange = xExtent[1] - xExtent[0];
 
     const xDomain = [xExtent[0] - (xRange * .05), xExtent[1] - (xRange * .005)];
     const yDomain = [0, max(data, (d) => d.calculated_total_impact_energy_kt)];

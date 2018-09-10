@@ -1,18 +1,22 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-export class PaginationButtons extends PureComponent {
+export class PaginationButtons extends Component {
   constructor(props) {
     super(props);
     this.state = { isDefaultActive: true };
+    this.activate = this.activate.bind(this);
   }
-  render() {
-    const { clickHandler } = this.props;
-    const { isDefaultActive } = this.state;
-    const activate = (val) => {
-      this.setState({isDefaultActive: false});
-      clickHandler(val);
-    }
 
+  activate(val) {
+    const { clickHandler } = this.props;
+    this.setState({isDefaultActive: false});
+    clickHandler(val);
+  }
+
+  render() {
+    const { isDefaultActive } = this.state;
+    // Handles adding/removing 'focus' state on the first pagination button,
+    // the rest is handled by CSS
     const activeStyle = isDefaultActive ? {
       'backgroundColor': '#9F4BFD', 
       'color': 'white'
@@ -20,11 +24,11 @@ export class PaginationButtons extends PureComponent {
 
     return (
       <div className='app-button-group'>
-        <button type='button' onClick={() => activate(10)} className='app-button app-button-outline' style={activeStyle}>10</button>
-        <button type='button' onClick={() => activate(25)} className='app-button app-button-outline'>25</button>
-        <button type='button' onClick={() => activate(50)} className='app-button app-button-outline'>50</button>
-        <button type='button' onClick={() => activate(100)} className='app-button app-button-outline'>100</button>
-        <button type='button' onClick={() => activate('ALL')} className='app-button app-button-outline'>All</button>
+        <button type='button' onClick={() => this.activate(10)} className='app-button app-button-outline' style={activeStyle}>10</button>
+        <button type='button' onClick={() => this.activate(25)} className='app-button app-button-outline'>25</button>
+        <button type='button' onClick={() => this.activate(50)} className='app-button app-button-outline'>50</button>
+        <button type='button' onClick={() => this.activate(100)} className='app-button app-button-outline'>100</button>
+        <button type='button' onClick={() => this.activate('ALL')} className='app-button app-button-outline'>All</button>
       </div>
     );
   }
